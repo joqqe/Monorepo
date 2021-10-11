@@ -16,9 +16,9 @@ namespace Todo.Lib
 
         }
 
-        public Item(Guid id, string title, string content, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
+        public Item(string title, string content, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Title = title;
             Content = content;
             UrgencyLevel = urgencylevel;
@@ -26,9 +26,9 @@ namespace Todo.Lib
             IsDone = isDone;
         }
 
-        public Item(Guid id, string title, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
+        public Item(string title, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Title = title;
             UrgencyLevel = urgencylevel;
             Deadline = deadline;
