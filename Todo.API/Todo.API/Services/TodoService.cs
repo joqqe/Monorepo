@@ -10,11 +10,11 @@ namespace Todo.API.Services
     {
         public List<Item> TodoItems { get; set; } = new List<Item>()
         {
-            new Item(new Guid(), "stofzuigen", "voor manu", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(new Guid(), "wassen", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(new Guid(), "beuzakken", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(new Guid(), "", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(new Guid(), "stofzuigen", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item( "stofzuigen", "voor manu", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item( "wassen", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item( "beuzakken", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item( "", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item( "stofzuigen", "", UrgencyLevel.URGENT, DateTime.Now, false),
         };
 
         public Item Get(Guid id)

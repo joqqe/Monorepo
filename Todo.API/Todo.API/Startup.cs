@@ -23,7 +23,7 @@ namespace Todo.API
         }
 
         public IConfiguration Configuration { get; }
-        public string MyAllowSpecificOrigins { get; private set; }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -31,10 +31,12 @@ namespace Todo.API
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("*");
-                                  });
+                    builder =>
+                    {
+                        builder.WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
             });
 
             services.AddControllers();
@@ -48,7 +50,7 @@ namespace Todo.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(MyAllowSpecificOrigins);
+
 
             if (env.IsDevelopment())
             {
@@ -62,6 +64,8 @@ namespace Todo.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
