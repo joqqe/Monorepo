@@ -4,9 +4,9 @@ namespace Todo.Lib
 {
     public class Item
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Title { get; set; }
-        public string Content { get; set; }
+        public string? Content { get; set; }
         public UrgencyLevel UrgencyLevel { get; set; }
         public DateTime Deadline { get; set; }
         public bool IsDone { get; set; }
@@ -16,7 +16,7 @@ namespace Todo.Lib
 
         }
 
-        public Item(int id, string title, string content, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
+        public Item(Guid id, string title, string content, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
         {
             Id = id;
             Title = title;
@@ -24,6 +24,15 @@ namespace Todo.Lib
             UrgencyLevel = urgencylevel;
             Deadline = deadline;
             IsDone = isDone;
+        }
+
+        public Item(Guid id, string title, UrgencyLevel urgencylevel, DateTime deadline, bool isDone)
+        {
+            Id = id;
+            Title = title;
+            UrgencyLevel = urgencylevel;
+            Deadline = deadline;
+            IsDone = !isDone;
         }
     }
 }
