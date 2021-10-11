@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ItemServiceService } from './item-service.service';
 
 export interface TodoItem {
@@ -13,6 +13,7 @@ export interface TodoItem {
   selector: 'inetum-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   item = {
