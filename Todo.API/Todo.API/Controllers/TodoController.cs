@@ -47,16 +47,12 @@ namespace Todo.API.Controllers
             _service.Add(item);
         }
 
-        // PUT api/<TodoController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
         // DELETE api/<TodoController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
+            _service.Delete(id);
         }
     }
 }

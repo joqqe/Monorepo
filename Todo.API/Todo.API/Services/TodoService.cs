@@ -45,7 +45,9 @@ namespace Todo.API.Services
 
         public bool Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var item = TodoItems.FirstOrDefault(t => t.Id == id);
+
+            return TodoItems.Remove(item);
         }
     }
 }
