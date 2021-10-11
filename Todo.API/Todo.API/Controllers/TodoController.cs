@@ -28,7 +28,7 @@ namespace Todo.API.Controllers
 
         // GET api/<TodoController>/5
         [HttpGet("{id}")]
-        public ActionResult<Item> Get(int id)
+        public ActionResult<Item> Get(Guid id)
         {
             return _service.Get(id);
         }

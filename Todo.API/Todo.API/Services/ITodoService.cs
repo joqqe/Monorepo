@@ -9,8 +9,9 @@ namespace Todo.API.Services
     public interface ITodoService
     {
         List<Item> GetAll();
-        Item Get(int id);
+        Item Get(Guid id);
         List<Item> Get(string filter);
         void Add(Item item);
+        bool Delete(Guid id);
     }
 }
