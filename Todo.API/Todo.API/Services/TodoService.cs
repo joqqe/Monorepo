@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Todo.Lib;
+using Todo.Lib.DTOs;
 
 namespace Todo.API.Services
 {
@@ -41,9 +42,11 @@ namespace Todo.API.Services
             return items;
         }
 
-        public void Add(Item item)
+        public void Add(CreateItemDTO item)
         {
-            TodoItems.Add(item);
+            Item newItem = new Item(item.Title, item.Content, item.UrgencyLevel, item.Deadline, item.IsDone);
+
+            TodoItems.Add(newItem);
         }
 
         public bool Delete(Guid id)

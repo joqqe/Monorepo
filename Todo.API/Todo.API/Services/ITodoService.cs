@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Todo.Lib;
+using Todo.Lib.DTOs;
 
 namespace Todo.API.Services
 {
@@ -11,7 +12,7 @@ namespace Todo.API.Services
         List<Item> GetAll();
         Item Get(Guid id);
         List<Item> Get(string filter);
-        void Add(Item item);
+        void Add(CreateItemDTO item);
         bool Delete(Guid id);
         Item GimmeRandomTodo();
     }
