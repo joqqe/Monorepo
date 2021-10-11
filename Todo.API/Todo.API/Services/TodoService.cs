@@ -10,14 +10,14 @@ namespace Todo.API.Services
     {
         public List<Item> TodoItems { get; set; } = new List<Item>()
         {
-            new Item(1, "stofzuigen", "voor manu", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(2, "wassen", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(3, "beuzakken", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(4, "", "", UrgencyLevel.URGENT, DateTime.Now, false),
-            new Item(5, "stofzuigen", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item(new Guid(), "stofzuigen", "voor manu", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item(new Guid(), "wassen", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item(new Guid(), "beuzakken", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item(new Guid(), "", "", UrgencyLevel.URGENT, DateTime.Now, false),
+            new Item(new Guid(), "stofzuigen", "", UrgencyLevel.URGENT, DateTime.Now, false),
         };
 
-        public Item Get(int id)
+        public Item Get(Guid id)
         {
             var todoItem = TodoItems.FirstOrDefault(t => t.Id == id);
             return todoItem;
@@ -41,6 +41,11 @@ namespace Todo.API.Services
         public void Add(Item item)
         {
             TodoItems.Add(item);
+        }
+
+        public bool Delete(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
