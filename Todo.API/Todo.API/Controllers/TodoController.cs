@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Todo.API.Services;
+using Todo.Lib;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,15 +14,16 @@ namespace Todo.API.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        public TodoController()
+        private readonly ITodoService _service;
+        public TodoController(ITodoService service)
         {
-
+            _service = service;
         }
         // GET: api/<TodoController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Item> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _service.GetAll();
         }
 
         // GET api/<TodoController>/5

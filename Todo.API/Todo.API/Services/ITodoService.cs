@@ -6,7 +6,7 @@ using Todo.Lib;
 
 namespace Todo.API.Services
 {
-    interface ITodoService
+    public interface ITodoService
     {
         List<Item> GetAll();
     }

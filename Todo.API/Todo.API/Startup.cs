@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Todo.API.Services;
 
 namespace Todo.API
 {
@@ -32,6 +33,7 @@ namespace Todo.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Todo.API", Version = "v1" });
             });
+            services.AddTransient<ITodoService, TodoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
