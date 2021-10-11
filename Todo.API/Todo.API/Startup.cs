@@ -33,7 +33,7 @@ namespace Todo.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Todo.API", Version = "v1" });
             });
-            services.AddTransient<ITodoService, TodoService>();
+            services.AddSingleton<ITodoService, TodoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
