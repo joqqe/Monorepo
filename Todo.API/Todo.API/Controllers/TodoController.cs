@@ -40,6 +40,12 @@ namespace Todo.API.Controllers
             return _service.Get(filter);
         }
 
+        [HttpGet("random")]
+        public ActionResult<Item> GimmeRandomTodo()
+        {
+            return _service.GimmeRandomTodo();
+        }
+
         // POST api/<TodoController>
         [HttpPost]
         public void Post([FromBody] Item item)

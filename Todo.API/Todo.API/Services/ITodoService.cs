@@ -13,5 +13,6 @@ namespace Todo.API.Services
         List<Item> Get(string filter);
         void Add(Item item);
         bool Delete(Guid id);
+        Item GimmeRandomTodo();
     }
 }
