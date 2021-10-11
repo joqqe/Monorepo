@@ -20,7 +20,7 @@
               "apps/todo-app/src/favicon.ico",
               "apps/todo-app/src/assets"
             ],
-            "styles": ["apps/todo-app/src/styles.css"],
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "apps/todo-app/src/styles.css"],
             "scripts": []
           },
           "configurations": {
