@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Todo.API.Services;
 using Todo.Lib;
+using Todo.Lib.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,7 +49,7 @@ namespace Todo.API.Controllers
 
         // POST api/<TodoController>
         [HttpPost]
-        public void Post([FromBody] Item item)
+        public void Post([FromBody] CreateItemDTO item)
         {
             _service.Add(item);
         }

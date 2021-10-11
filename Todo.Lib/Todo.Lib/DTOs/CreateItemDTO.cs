@@ -8,7 +8,6 @@ namespace Todo.Lib.DTOs
 {
     public class CreateItemDTO
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public UrgencyLevel UrgencyLevel { get; set; }
