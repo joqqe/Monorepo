@@ -28,15 +28,23 @@ namespace Todo.API.Controllers
 
         // GET api/<TodoController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Item> Get(int id)
         {
-            return "value";
+            return _service.Get(id);
+        }
+
+        // GET api/<TodoController>/filter
+        [HttpGet("filter")]
+        public ActionResult<IEnumerable<Item>> GetWithFilter([FromQuery] string filter)
+        {
+            return _service.Get(filter);
         }
 
         // POST api/<TodoController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Item item)
         {
+            _service.Add(item);
         }
 
         // PUT api/<TodoController>/5
