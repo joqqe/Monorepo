@@ -16,23 +16,27 @@ export interface TodoItem {
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
+  items: any;
   item = {
-    "id": "856c5cbf-5a3e-4322-ab8f-251e504ee946",
-    "title": "stofzuigen2",
-    "content": "voor manu",
-    "urgencyLevel": 2,
-    "deadline": "2021-10-11T16:26:49.8810673+02:00",
-    "isDone": false
+    title:  '',
+    content: '',
+    urgencyLevel: 0,
+    deadline: '',
+    isDone: false
 } 
   title = 'todo-app';
   constructor(public todoApi: ItemServiceService){  }
   ngOnInit() {
-    this.todoApi.createTodoItem(this.item).subscribe((data: {}) => {
-      console.log(data)
-    })
+    this.updateItemsList();
+   }
+   updateItemsList(){
     this.todoApi.getTodoItems().subscribe((data: any) => {
-      console.log(data);
+      this.items = data
     });
-    
+   }
+   addItem() {
+    this.todoApi.createTodoItem(this.item).subscribe((data: any) => {
+      this.updateItemsList();
+    });
    }
 }

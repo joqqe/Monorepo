@@ -1,5 +1,8 @@
 export interface Item {
-   title : string;
-   content : string;
-   prioriteit : string;
+  id: string;
+  title: string;
+  content: string;
+  urgencyLevel: number;
+  deadline: string;
+  isDone: boolean;
 }

@@ -5,7 +5,12 @@
       "ProjectGuid": "c7aa41af-4e2f-4155-855b-bae6fd0f9cad",
       "DisplayName": "Todo.API",
       "ColorIndex": 0
+    },
+    "eb20eca5-93fb-40c7-a5fe-8bbe6088c021": {
+      "ProjectGuid": "eb20eca5-93fb-40c7-a5fe-8bbe6088c021",
+      "DisplayName": "Todo.Lib",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

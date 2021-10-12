@@ -42,8 +42,8 @@ export class ItemServiceService {
     )
   }
 
-  createTodoItem(item: PostTodoItem): Observable<TodoItem> {
-    return this.http.post<TodoItem>('https://localhost:44312/api/Todo', JSON.stringify(item), this.httpOptions)
+  createTodoItem(item: PostTodoItem): Observable<PostTodoItem> {
+    return this.http.post<PostTodoItem>('https://localhost:44312/api/Todo', JSON.stringify(item), this.httpOptions)
     .pipe(
       catchError(this.handleError)
     )

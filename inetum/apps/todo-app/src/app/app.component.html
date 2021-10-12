@@ -1,39 +1,33 @@
-<<<<<<< HEAD
-<h1>Hello world</h1>
-<button class="btn btn-primary">Hallo</button>
-=======
 <div class="container">
   <h1>To Do List</h1>
 <form>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Titel</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" >
+    <label for="title">Titel</label>
+    <input [(ngModel)]="item.title" name="title" type="text" class="form-control" id="title" >
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Content</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="content">Content</label>
+    <input [(ngModel)]="item.content" name="content" type="text" class="form-control" id="content">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Prioriteit</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Minor</option>
-      <option>Major</option>
-      <option>Urgent</option>
+    <label for="urgencyLevel">Prioriteit</label>
+    <select [(ngModel)]="item.urgencyLevel" name="urgencyLevel" class="form-control" id="urgencyLevel">
+      <option value="0">Minor</option>
+      <option value="1">Major</option>
+      <option value="2">Urgent</option>
     </select>
   </div><br>
   <div class="form-group">
-    <input type="date">
+    <label for="deadline">Deadline</label>
+    <input [(ngModel)]="item.deadline" id="deadline" name="deadline" type="date">
   </div>
   
   <br>
-  <button type="button" class="btn btn-success">Add Item</button>
+  <button type="button" (click)="addItem()" class="btn btn-success">Add Item</button>
 </form>
 </div><br>
 
 <!-- Added Item -->
 <ul>
-  <li *ngFor="let item of items">
-    <inetum-item></inetum-item>
-  </li>
+    <inetum-item *ngFor="let item of items" [item]="item"></inetum-item>
 </ul>
->>>>>>> c468dff750855028cfe6a453b7201da351094a00
